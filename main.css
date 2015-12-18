@@ -1,0 +1,34 @@
+* {
+      -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+           box-sizing: border-box;
+}
+
+body {
+  font-family: "Calibri", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.board {
+  margin: auto;
+  margin-bottom: 3em;
+}
+
+.tile {
+  padding: 0.5em;
+  text-align: center;
+  cursor: pointer;
+}
+
+td {
+  vertical-align: center;
+  width: 15%;
+  border: 5px solid #ddc;
+}
+
+.marked {
+  background: gray;
+}
+
+.bingo {
+  background: green;
+}

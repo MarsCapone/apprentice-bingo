@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="apprenticeBingo">
+  <head>
+    <meta charset="utf-8">
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script type="text/javascript" src="//underscorejs.org/underscore-min.js"></script>
+		<script type="text/javascript" src="./app.js"></script>
+		<link rel="stylesheet" href="./main.css">
+    <title>Apprentice Bingo</title>
+  </head>
+  <body ng-controller="apprenticeBingoController">
+    <h1>Apprentice Bingo</h1>
+    <div>
+			<label>
+				Size:
+				<input type="number" ng-model="bingoSize.size" required>
+			</label>
+			<label>
+			  Bingo Type: 
+			  <select ng-model="gridType">
+			    <option ng-repeat="type in config.gridTypes">{{ type }}</option>
+			  </select>
+			</label>
+			<label>
+			  Number of Tables:
+			  <select ng-model="bingoSize.tableCount">
+			    <option ng-repeat="val in config.tableCounts">{{ val }}</option>
+			  </select>
+			</label>
+			<button ng-click="bingoTables = getBingoTables(content[gridType])">
+			  New Tables
+			</button>
+			<hr>
+		</div>
+		
+
+    <div ng-repeat="b in bingoTables" class="board">
+      <table>
+        <tr ng-repeat="row in b.table">
+          <td ng-repeat="tile in row" ng-click="tile.change()" class="tile" 
+            ng-class="{marked: tile.marked, bingo: tile.inBingo}">
+            <div>
+              <p>{{ tile.value }}</p>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <!--<button ng-click="b.reset()" class="tableReset">
+        Reset
+      </button>-->
+      <hr>
+    </div>
+    
+    
+  </body>
+</html>
