@@ -1,6 +1,6 @@
 # Apprentice Bingo Web App
 
-__[Live at samsondanziger.com/projects/apprentice-bingo/live][live-site]__
+__Live at [http://samsondanziger.com/projects/apprentice-bingo/live][live-site]__
 
 This a  project I forked in order to have a go at a client side web app. It was my first foray into [AngularJS][angular].
 
